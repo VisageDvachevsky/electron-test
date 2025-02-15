@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Enhanced iPhone Calculator</title>
+  <link href="../dist/styles.css" rel="stylesheet">
+  <script src="https://unpkg.com/lucide@latest"></script>
+</head>
+<body class="bg-gray-900 min-h-screen flex items-center justify-center p-4">
+  <div class="calculator w-full max-w-md relative">
+    <button id="theme-toggle" class="theme-switch">
+        <i data-lucide="moon" class="w-5 h-5"></i>
+      </button>
+    
+    <div id="history-overlay" class="history-overlay"></div>
+    <div id="history-panel" class="history-panel">
+      <div class="flex justify-between items-center mb-4">
+        <h3 class="text-lg font-medium">History</h3>
+        <button id="clear-history" class="text-sm text-red-500">Clear All</button>
+      </div>
+      <div id="history-list" class="space-y-2"></div>
+    </div>
+    
+    <div class="calculator-display">
+      <div id="previous-operation" class="calculator-previous"></div>
+      <div id="display" class="calculator-current">0</div>
+      <button id="history-toggle" class="absolute top-4 left-4 text-gray-500 hover:text-white transition-colors">
+        <i data-lucide="history"></i>
+      </button>
+    </div>
+    
+    <div class="calculator-buttons">
+      <button class="calculator-button function" data-action="clear">
+        <span id="clear-text">AC</span>
+      </button>
+      <button class="calculator-button function" data-action="toggle-sign">
+        <span class="text-xl">±</span>
+      </button>
+      <button class="calculator-button function" data-action="percent">
+        <div class="calculator-button-icon">
+          <i data-lucide="percent" class="w-6 h-6"></i>
+        </div>
+      </button>
+      <button class="calculator-button operator" data-action="divide">
+        <div class="calculator-button-icon">
+          <i data-lucide="divide" class="w-6 h-6"></i>
+        </div>
+      </button>
+      
+      <button class="calculator-button number" data-action="number" data-value="7">7</button>
+      <button class="calculator-button number" data-action="number" data-value="8">8</button>
+      <button class="calculator-button number" data-action="number" data-value="9">9</button>
+      <button class="calculator-button operator" data-action="multiply">
+        <div class="calculator-button-icon">
+          <i data-lucide="x" class="w-6 h-6"></i>
+        </div>
+      </button>
+      
+      <button class="calculator-button number" data-action="number" data-value="4">4</button>
+      <button class="calculator-button number" data-action="number" data-value="5">5</button>
+      <button class="calculator-button number" data-action="number" data-value="6">6</button>
+      <button class="calculator-button operator" data-action="subtract">
+        <div class="calculator-button-icon">
+          <i data-lucide="minus" class="w-6 h-6"></i>
+        </div>
+      </button>
+      
+      <button class="calculator-button number" data-action="number" data-value="1">1</button>
+      <button class="calculator-button number" data-action="number" data-value="2">2</button>
+      <button class="calculator-button number" data-action="number" data-value="3">3</button>
+      <button class="calculator-button operator" data-action="add">
+        <div class="calculator-button-icon">
+          <i data-lucide="plus" class="w-6 h-6"></i>
+        </div>
+      </button>
+      
+      <button class="calculator-button number zero" data-action="number" data-value="0">0</button>
+      <button class="calculator-button number" data-action="decimal">.</button>
+      <button class="calculator-button equals" data-action="calculate">
+        <div class="calculator-button-icon">
+          <i data-lucide="equal" class="w-6 h-6"></i>
+        </div>
+      </button>
+    </div>
+  </div>
+  
+  <script src="calculator.js"></script>
+  <script src="renderer.js"></script>
+  <script>
+    document.addEventListener('DOMContentLoaded', () => {
+      lucide.createIcons();
+    });
+  </script>
+</body>
+</html>

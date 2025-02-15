@@ -1,0 +1,30 @@
+{
+  "name": "electron-calculator",
+  "version": "1.0.0",
+  "main": "main.js",
+  "scripts": {
+    "start": "electron .",
+    "build": "electron-builder",
+    "watch": "tailwindcss -i ./src/styles.css -o ./dist/styles.css --watch"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "class-variance-authority": "^0.7.1",
+    "electron": "^34.2.0",
+    "framer-motion": "^12.4.3",
+    "lucide-static": "^0.473.0",
+    "radix-ui": "^1.1.3",
+    "react": "^19.0.0",
+    "react-dom": "^19.0.0",
+    "tailwind-variants": "^0.3.1",
+    "tailwindcss-filters": "^3.0.0"
+  },
+  "devDependencies": {
+    "autoprefixer": "^10.4.20",
+    "postcss": "^8.5.2",
+    "tailwindcss": "^4.0.6"
+  },
+  "description": ""
+}
